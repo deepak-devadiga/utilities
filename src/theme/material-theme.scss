@@ -1,0 +1,55 @@
+@use '@angular/material' as mat;
+
+/* =========================
+   Material Theme Definition
+========================= */
+
+$light-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: mat.$violet-palette,
+      tertiary: mat.$green-palette,
+    ),
+    typography: (
+      plain-family: Roboto,
+      brand-family: Roboto,
+    ),
+    density: (
+      scale: 0,
+    ),
+  )
+);
+
+$dark-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: dark,
+      primary: mat.$violet-palette,
+      tertiary: mat.$green-palette,
+    ),
+    typography: (
+      plain-family: Roboto,
+      brand-family: Roboto,
+    ),
+    density: (
+      scale: 0,
+    ),
+  )
+);
+
+/* =========================
+   Apply Themes
+========================= */
+
+html {
+  color-scheme: light;
+
+  @include mat.all-component-themes($light-theme);
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  @include mat.all-component-colors($dark-theme);
+}

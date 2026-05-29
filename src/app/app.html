@@ -1,9 +1,15 @@
-<div class="theme-toggle">
-  <button type="button" (click)="themeService.toggleTheme()">
-    {{ themeService.theme() === 'light' ? '🌙 Dark' : '☀️ Light' }}
-  </button>
-</div>
+<div class="app-layout">
+  <app-sidebar></app-sidebar>
 
-<router-outlet>
-  <app-coin-toss></app-coin-toss>
-</router-outlet>
+  <main class="content-area">
+    <div class="theme-toggle">
+      <button type="button" (click)="themeService.toggleTheme()">
+        <mat-icon>
+          {{ themeService.theme() === 'light' ? 'dark_mode' : 'light_mode' }}
+        </mat-icon>
+      </button>
+    </div>
+
+    <router-outlet></router-outlet>
+  </main>
+</div>

@@ -1,0 +1,72 @@
+<aside class="sidebar" [class.collapsed]="isCollapsed()">
+  <div class="sidebar-header">
+    <h1 class="logo">
+      {{ isCollapsed() ? '⚡' : 'Utility Hub' }}
+    </h1>
+
+    <button type="button" class="toggle-button" (click)="toggleSidebar()">
+      <mat-icon>
+        {{ isCollapsed() ? 'chevron_right' : 'chevron_left' }}
+      </mat-icon>
+    </button>
+  </div>
+
+  <nav class="navigation">
+    @for (item of navigationItems; track item.label) {
+      <div class="navigation-group">
+        @if (!item.children?.length) {
+          <a
+            class="navigation-link"
+            [routerLink]="item.route"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <mat-icon class="icon">
+              {{ item.icon }}
+            </mat-icon>
+
+            @if (!isCollapsed()) {
+              <span>{{ item.label }}</span>
+            }
+          </a>
+        }
+
+        @if (item.children?.length) {
+          <div class="navigation-parent">
+            <button
+              type="button"
+              class="navigation-title collapsible"
+              (click)="toggleMenu(item.label)"
+            >
+              <div class="navigation-title-content">
+                <span class="material-icons icon">
+                  {{ item.icon }}
+                </span>
+
+                @if (!isCollapsed()) {
+                  <span>{{ item.label }}</span>
+                }
+              </div>
+
+              @if (!isCollapsed()) {
+                <mat-icon class="expand-icon" [class.expanded]="isMenuExpanded(item.label)">
+                  expand_more
+                </mat-icon>
+              }
+            </button>
+
+            @if (!isCollapsed() && isMenuExpanded(item.label)) {
+              <div class="submenu">
+                @for (child of item.children; track child.label) {
+                  <a class="submenu-link" [routerLink]="child.route" routerLinkActive="active">
+                    {{ child.label }}
+                  </a>
+                }
+              </div>
+            }
+          </div>
+        }
+      </div>
+    }
+  </nav>
+</aside>

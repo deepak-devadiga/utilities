@@ -4,11 +4,14 @@
     <div class="side tails">Tails</div>
   </div>
 
-  <button [disabled]="isFlipping()" (click)="flip()">
+  <button mat-flat-button color="primary" [disabled]="isFlipping()" (click)="flip()">
     {{ isFlipping() ? 'Flipping...' : 'Flip Coin' }}
   </button>
 
   @if (result()) {
-    <p>Result: {{ result() | uppercase }}</p>
+    <p class="result">
+      Result:
+      {{ result() | uppercase }}
+    </p>
   }
 </div>

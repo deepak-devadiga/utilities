@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { UpperCasePipe } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-coin-toss',
-  imports: [UpperCasePipe],
+  imports: [UpperCasePipe, MatButtonModule],
   templateUrl: './coin-toss.html',
   styleUrls: ['./coin-toss.scss'],
 })
