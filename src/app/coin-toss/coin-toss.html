@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="coin" [class.flipping]="isFlipping()">
+    <div class="side heads">Heads</div>
+    <div class="side tails">Tails</div>
+  </div>
+
+  <button [disabled]="isFlipping()" (click)="flip()">
+    {{ isFlipping() ? 'Flipping...' : 'Flip Coin' }}
+  </button>
+
+  @if (result()) {
+    <p>Result: {{ result() | uppercase }}</p>
+  }
+</div>

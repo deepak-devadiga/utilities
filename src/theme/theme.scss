@@ -1,0 +1,81 @@
+@use 'sass:color';
+
+:root {
+  /* Brand Colors */
+  --color-primary: #40476d;
+  --color-primary-hover: #{color.scale(#40476d, $lightness: -10%)};
+
+  --color-secondary: #eb6534;
+  --color-secondary-hover: #{color.scale(#eb6534, $lightness: -10%)};
+
+  --color-tertiary: #acbea3;
+
+  /* Surface Colors */
+  --color-background: #f5f7fb;
+  --color-surface: #ffffff;
+  --color-surface-alt: #eef1f7;
+
+  /* Text Colors */
+  --color-text: #1f2937;
+  --color-text-muted: #6b7280;
+  --color-text-on-primary: #ffffff;
+  --color-text-on-secondary: #ffffff;
+
+  /* Border */
+  --color-border: #dbe1ea;
+
+  /* Status */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.12);
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  /* Animation */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+
+  color-scheme: light;
+
+  --font-family-base: 'Roboto', system-ui, sans-serif;
+
+  --color-card: #ffffff;
+  --color-card-hover: #f3f4f6;
+}
+
+/* Dark Theme */
+[data-theme='dark'] {
+  --color-background: #111827;
+  --color-surface: #1f2937;
+  --color-surface-alt: #2b3545;
+
+  --color-text: #f3f4f6;
+  --color-text-muted: #9ca3af;
+
+  --color-border: #374151;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.5);
+
+  color-scheme: dark;
+
+  --color-card: #1f2937;
+  --color-card-hover: #374151;
+}

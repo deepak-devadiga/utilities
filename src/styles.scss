@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@use './theme/font';
+@use './theme/theme';
+@use './theme/reset';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

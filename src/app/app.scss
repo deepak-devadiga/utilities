@@ -1,0 +1,35 @@
+:host {
+  display: block;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  z-index: 1000;
+
+  button {
+    padding: var(--space-sm) var(--space-md);
+
+    border-radius: var(--radius-full);
+
+    background-color: var(--color-card);
+    color: var(--color-text);
+
+    border: 1px solid var(--color-border);
+
+    cursor: pointer;
+
+    box-shadow: var(--shadow-md);
+
+    transition:
+      background-color var(--transition-normal),
+      color var(--transition-normal),
+      transform var(--transition-fast);
+
+    &:hover {
+      transform: translateY(-2px);
+      background-color: var(--color-card-hover);
+    }
+  }
+}
