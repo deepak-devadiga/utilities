@@ -4,6 +4,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { NavigationItem } from '../../core/models/navigation.model';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { menus } from '../../core/constants/menu';
 
 @Component({
   selector: 'app-sidebar',
@@ -17,69 +18,7 @@ export class Sidebar {
 
   readonly expandedMenus = signal<string[]>(['Games']);
 
-  readonly navigationItems: NavigationItem[] = [
-    {
-      label: 'Dashboard',
-      icon: 'dashboard',
-      route: '/',
-    },
-    {
-      label: 'Games',
-      icon: 'sports_esports',
-      children: [
-        {
-          label: 'Coin Flip',
-          route: '/games/coin-flip',
-        },
-        {
-          label: 'Dice Roller',
-          route: '/games/dice-roller',
-        },
-      ],
-    },
-    {
-      label: 'Calculators',
-      icon: 'calculate',
-      children: [
-        {
-          label: 'Basic Calculator',
-          route: '/calculators/basic',
-        },
-        {
-          label: 'BMI Calculator',
-          route: '/calculators/bmi',
-        },
-      ],
-    },
-    {
-      label: 'Converters',
-      icon: 'swap_horiz',
-      children: [
-        {
-          label: 'Unit Converter',
-          route: '/converters/unit',
-        },
-        {
-          label: 'Currency Converter',
-          route: '/converters/currency',
-        },
-      ],
-    },
-    {
-      label: 'Time Tools',
-      icon: 'schedule',
-      children: [
-        {
-          label: 'World Clock',
-          route: '/time/world-clock',
-        },
-        {
-          label: 'Timezone Converter',
-          route: '/time/timezone-converter',
-        },
-      ],
-    },
-  ];
+  readonly navigationItems: NavigationItem[] = menus;
 
   toggleSidebar(): void {
     this.isCollapsed.update((value) => !value);
