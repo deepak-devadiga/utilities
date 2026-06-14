@@ -1,7 +1,10 @@
 @use 'sass:color';
 
+/* =====================================
+   LIGHT THEME (DEFAULT)
+===================================== */
 :root {
-  /* Brand Colors */
+  /* Brand */
   --color-primary: #40476d;
   --color-primary-hover: #{color.scale(#40476d, $lightness: -10%)};
 
@@ -10,18 +13,30 @@
 
   --color-tertiary: #acbea3;
 
-  /* Surface Colors */
+  /* Backgrounds */
   --color-background: #f5f7fb;
   --color-surface: #ffffff;
   --color-surface-alt: #eef1f7;
 
-  /* Text Colors */
+  /* Cards */
+  --color-card: #ffffff;
+  --color-card-hover: #f3f4f6;
+
+  /* Inputs */
+  --color-input-bg: #ffffff;
+  --color-input-border: #dbe1ea;
+
+  /* Calculator */
+  --color-display-bg: #1f2937;
+  --color-display-text: #ffffff;
+
+  /* Text */
   --color-text: #1f2937;
   --color-text-muted: #6b7280;
   --color-text-on-primary: #ffffff;
   --color-text-on-secondary: #ffffff;
 
-  /* Border */
+  /* Borders */
   --color-border: #dbe1ea;
 
   /* Status */
@@ -51,31 +66,58 @@
   --transition-fast: 150ms ease;
   --transition-normal: 250ms ease;
 
-  color-scheme: light;
-
+  /* Typography */
   --font-family-base: 'Roboto', system-ui, sans-serif;
 
-  --color-card: #ffffff;
-  --color-card-hover: #f3f4f6;
+  color-scheme: light;
 }
 
-/* Dark Theme */
+/* =====================================
+   DARK THEME
+===================================== */
 [data-theme='dark'] {
-  --color-background: #111827;
-  --color-surface: #1f2937;
-  --color-surface-alt: #2b3545;
+  /* Brand */
+  --color-primary: #6c77b8;
+  --color-primary-hover: #7b86cb;
 
-  --color-text: #f3f4f6;
-  --color-text-muted: #9ca3af;
+  --color-secondary: #ff8557;
+  --color-secondary-hover: #ff966e;
 
-  --color-border: #374151;
+  /* Backgrounds */
+  --color-background: #0f172a;
+  --color-surface: #1e293b;
+  --color-surface-alt: #334155;
 
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.5);
+  /* Cards */
+  --color-card: #1e293b;
+  --color-card-hover: #334155;
+
+  /* Inputs */
+  --color-input-bg: #273449;
+  --color-input-border: #475569;
+
+  /* Calculator */
+  --color-display-bg: #020617;
+  --color-display-text: #f8fafc;
+
+  /* Text */
+  --color-text: #f8fafc;
+  --color-text-muted: #94a3b8;
+  --color-text-on-primary: #ffffff;
+  --color-text-on-secondary: #ffffff;
+
+  /* Borders */
+  --color-border: #475569;
+
+  /* Status */
+  --color-success: #4ade80;
+  --color-warning: #fbbf24;
+  --color-error: #f87171;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.6);
 
   color-scheme: dark;
-
-  --color-card: #1f2937;
-  --color-card-hover: #374151;
 }

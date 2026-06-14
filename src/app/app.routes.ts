@@ -7,7 +7,17 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
+    path: 'calculators',
+    redirectTo: 'gcalculators/basic',
+    pathMatch: 'full',
+  },
+  {
     path: 'games/coin-flip',
     loadComponent: () => import('./coin-toss/coin-toss').then((m) => m.CoinToss),
+  },
+  {
+    path: 'calculators/basic',
+    loadComponent: () =>
+      import('./calculators/basic-calculator/basic-calculator').then((m) => m.BasicCalculator),
   },
 ];

@@ -7,3 +7,28 @@
 *::after {
   box-sizing: border-box;
 }
+
+html,
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+  transition:
+    background-color var(--transition-normal),
+    color var(--transition-normal);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input,
+textarea,
+select {
+  background: var(--color-input-bg);
+  color: var(--color-text);
+  border: 1px solid var(--color-input-border);
+}
+
+button {
+  transition: all var(--transition-fast);
+}
