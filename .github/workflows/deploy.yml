@@ -27,8 +27,10 @@ jobs:
           cache: npm
 
       - run: npm ci
+        working-directory: utility
 
       - run: npm run build:gh -- --base-href "/${{ github.event.repository.name }}/"
+        working-directory: utility
 
       - uses: actions/upload-pages-artifact@v3
         with:
